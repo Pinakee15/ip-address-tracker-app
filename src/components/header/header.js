@@ -8,9 +8,8 @@ const Header = (props) => {
       };
 
 	return (
-        <div className='header' style={style}>
-            <h2>IP Address Tracker</h2>      
-
+        <div className='header-container' style={style}>
+            <h1 className="header__description">IP Address Tracker</h1>     
         </div>
 	);
 };

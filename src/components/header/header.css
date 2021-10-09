@@ -1,6 +1,14 @@
-.header {
+.header-container {
   background-image: url("../../assets/images/pattern-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+}
+
+.header__description {
+  padding: 1.5rem 0;
+  text-align: center;
+  margin: 0px !important;
+  color: #fff;
+  font-weight: 500;
 }
