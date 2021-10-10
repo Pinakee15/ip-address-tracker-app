@@ -10,4 +10,5 @@
   padding: 1rem;
   box-shadow: 1px 1px 5px #808080;
   left: 9vw;
+  z-index: 2;
 }

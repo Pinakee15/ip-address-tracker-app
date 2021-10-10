@@ -1,11 +1,11 @@
 import './App.css';
-// import Header from '../components/header/headerComponent';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import AppContainer from './app-container/appContainer';
 
 function App() {
   return (
     <div className="App">
-      <AppContainer />
+       <AppContainer />
     </div>
   );
 }

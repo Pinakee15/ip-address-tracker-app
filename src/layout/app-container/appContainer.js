@@ -3,6 +3,7 @@ import IpInputSearch from '../../components/IpInputSearch/ipInputSearch';
 import './appContainer.css';
 import { fetchIpLocations } from '../../services/ip-location-service';
 import DisplayDetailsModal from '../../shared/entryComponents/Modals/displayDetailsModal/displayDetailsModal';
+import MapComponent from '../../components/mapComponent/mapComponent';
 
 const style = {
     height : "275px"
@@ -32,9 +33,7 @@ const AppContainer = (props) => {
             </div>
 
             <div className="app-container__lower-body">
-                <div>
-                    lower body
-                </div>          
+                <MapComponent />
             </div>         
             {/* <div>Ip input : {inputIp}</div> */}
         </div>
