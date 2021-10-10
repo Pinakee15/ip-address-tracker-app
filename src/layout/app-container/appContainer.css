@@ -1,11 +1,16 @@
-.header-container {
+.app-container {
+  padding: 0;
+  margin: 0;
+}
+
+.app-container__upper-body {
   background-image: url("../../assets/images/pattern-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
 }
 
-.header__description {
+.upper-body__heading {
   padding: 1.5rem 0;
   text-align: center;
   margin: 0px !important;

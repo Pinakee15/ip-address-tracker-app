@@ -1,0 +1,17 @@
+.search-ip-input {
+  border: none;
+  padding: 1.125rem;
+  width: 300px;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.search-ip-input {
+  outline: none;
+}
+
+.submit-btn {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background-color: #000;
+}
