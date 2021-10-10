@@ -5,26 +5,27 @@ import './ipInputSearch.css'
 const IpInputSearch = (props) => {
 
     const [ip, setIp] = useState('');
-	const submitValue = (e) => {
+	const submitIp = (e) => {
 		e.preventDefault();
         console.log("Submitted value : ", e , " and onchange value : ", ip)
+        props.setInputIp(ip)
 		//props.setSearchedIp(ip);
 	};
     
 	return (
         <div>
-            <form onSubmit={submitValue}>
+            <form onSubmit={submitIp}>
                 <input
                     className='search-ip-input'
-                    placeholder='Search for any IP address or domain'
                     value={ip}
                     onChange={(e) => setIp(e.target.value)}
+                    placeholder='Search for any IP address or domain'
                 />
                 <button className='submit-btn' type='submit'>
                     <img className='arrow-img' src={arrowButton} alt='icon' />
                 </button>
             </form>
-            <div>{ip}</div>
+            {/* <div>{ip}</div> */}
         </div>
 	);
 };

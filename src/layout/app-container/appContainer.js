@@ -5,25 +5,25 @@ import './appContainer.css';
 
 const AppContainer = (props) => {
 
+    const [inputIp , setInputIp] = useState('');
+
     const style = {
         height : "275px"
     };
 
 	return (
-        // <div className='header-container' style={style}>
-        //     <h1 className="header__description">IP Address Tracker</h1>     
-        //     <IpInput ipAdress="ipAdress" submitIpAddress="submitIpAddress"/>            
-        // </div>
+
         <div className="app-container">
 
             <div className="app-container__upper-body" style={style}>
                 <h1 className="upper-body__heading">IP Address Tracker</h1>
-                <IpInputSearch />
+                <IpInputSearch setInputIp={setInputIp}/>
             </div>
 
             <div className="app-container__upper-body">
 
-            </div>
+            </div>         
+            <div>Ip input : {inputIp}</div>
         </div>
 	);
 };
