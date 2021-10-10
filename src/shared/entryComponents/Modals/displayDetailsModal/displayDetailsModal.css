@@ -1,0 +1,9 @@
+.modalContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  flex-wrap: wrap;
+  width: 80vw;
+  border-radius: 1rem;
+  padding: 1rem;
+}

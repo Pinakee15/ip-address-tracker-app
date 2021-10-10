@@ -4,7 +4,6 @@ import { API_CONSTANTS } from "../shared/constants/API_CONTANTS";
 // FUNCTION FOR FETCHING LOCATION WHEN GIVEN IP-ADDRESS AS A PARAMETER
 let API_KEY = "at_zEeg3r3heV9zVzwTF96QYOp15HLwT"
 
-// https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_GEO_API}&domain=${props.searchedIp}
 
 export let fetchIpLocations = async (ipAddress)=>{
 
