@@ -1,4 +1,6 @@
 .modalContainer {
+  position: absolute;
+  bottom: -30px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -6,4 +8,6 @@
   width: 80vw;
   border-radius: 1rem;
   padding: 1rem;
+  box-shadow: 1px 1px 5px #808080;
+  left: 9vw;
 }

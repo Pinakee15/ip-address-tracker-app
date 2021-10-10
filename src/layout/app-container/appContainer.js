@@ -28,7 +28,7 @@ const AppContainer = (props) => {
                 <DisplayDetailsModal />
             </div>
 
-            <div className="app-container__upper-body">
+            <div className="app-container__lower-body">
 
             </div>         
             {/* <div>Ip input : {inputIp}</div> */}

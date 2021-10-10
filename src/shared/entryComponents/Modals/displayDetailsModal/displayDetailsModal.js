@@ -35,17 +35,21 @@ let ipInfos = {
     }
 }
 
-let finalInfo = [{'IP ADDRESS' : ipInfos['ip']} , {'LOCATION' : ipInfos['location']['city'] + ipInfos['location']['region'] + ipInfos['location']['country']},
+ipInfos = [{'IP ADDRESS' : ipInfos['ip']} , 
+
+                {'LOCATION' : (ipInfos['location']['city'] ? ipInfos['location']['city'] + ', ' : '') + 
+                    (ipInfos['location']['region'] ? ipInfos['location']['region'] + ', ' : '') + 
+                    (ipInfos['location']['country'] ? ipInfos['location']['country'] : '')},
+
                  {'TIMEZONE' : ipInfos['location']['timezone']} , {'ISP' : ipInfos['isp']}]
 
 const DisplayDetailsModal = (props) => {
 
-    const [ipInfo, setIpInfo] = useState('');
-    const animals = ["Dog", "Bird", "Cat", "Mouse", "Horse"];
+    //const [ipInfo, setIpInfo] = useState('');
     
 	return (
         <div className="modalContainer">
-            {finalInfo.map(info=>{
+            {ipInfos.map(info=>{
                 return (
                     <div>
                         <p>{Object.keys(info)[0]}</p>
