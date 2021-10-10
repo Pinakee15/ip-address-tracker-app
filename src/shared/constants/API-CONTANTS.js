@@ -1,0 +1,1 @@
+let IPIFY_URL = "https://geo.ipify.org/api/v1";

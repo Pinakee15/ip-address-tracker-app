@@ -9,8 +9,12 @@ const IpInputSearch = (props) => {
 		e.preventDefault();
         console.log("Submitted value : ", e , " and onchange value : ", ip)
         props.setInputIp(ip)
-		//props.setSearchedIp(ip);
 	};
+
+    // fetch api data
+    fetch('https://geo.ipify.org/api/v2/country?apiKey=at_zEeg3r3heV9zVzwTF96QYOp15HLwT&ipAddress=8.8.8.8')
+        .then(response => response.json())
+        .then(data => console.log("Fetched data : ",  data));
     
 	return (
         <div>
@@ -31,4 +35,6 @@ const IpInputSearch = (props) => {
 };
 
 export default IpInputSearch;
+
+// https://geo.ipify.org/api/v2/country,city?apiKey=at_zEeg3r3heV9zVzwTF96QYOp15HLwT&ipAddress=8.8.8.8
 
