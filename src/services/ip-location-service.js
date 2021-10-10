@@ -9,7 +9,7 @@ export let fetchIpLocations = async (ipAddress)=>{
 
     if (!ipAddress) {
         console.log("USE EFFECT WAS CALLED ....");
-        return await "No data";
+        return await undefined;
     }
 
     return axios.get(API_CONSTANTS['IPIFY_URL'] + '?apiKey=' + API_KEY + '&domain=' + ipAddress)

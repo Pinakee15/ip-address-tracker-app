@@ -13,12 +13,16 @@ const AppContainer = (props) => {
 
     const [inputIp , setInputIp] = useState('');
     const [ipInfos , setIpInfos] = useState({});
+    const [coordinates , setCordinates] = useState([51.505, -0.09]);
     // const [ipInfos , setIpInfos] = useState("string");
     
     useEffect(()=>{
         fetchIpLocations(inputIp).then(res=>{
-            setIpInfos({...res?.data})
-            // setIpInfos(`${Math.random()}`);
+            if(res){
+                let data = res?.data;
+                setIpInfos({...data});
+                setCordinates([data?.location?.lat, data?.location?.lng])
+            }
         })
     }, [inputIp])
 
@@ -33,7 +37,7 @@ const AppContainer = (props) => {
             </div>
 
             <div className="app-container__lower-body">
-                <MapComponent />
+                <MapComponent ipInfos={ipInfos} coordinates={[...coordinates]} />
             </div>         
             {/* <div>Ip input : {inputIp}</div> */}
         </div>
