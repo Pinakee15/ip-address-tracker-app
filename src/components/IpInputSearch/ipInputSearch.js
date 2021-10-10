@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import arrowButton from '../../assets/images/icon-arrow.svg';
-import './ipInputSearch.css'
+import './ipInputSearch.css';
+
 
 const IpInputSearch = (props) => {
 
@@ -12,9 +13,9 @@ const IpInputSearch = (props) => {
 	};
 
     // fetch api data
-    fetch('https://geo.ipify.org/api/v2/country?apiKey=at_zEeg3r3heV9zVzwTF96QYOp15HLwT&ipAddress=8.8.8.8')
-        .then(response => response.json())
-        .then(data => console.log("Fetched data : ",  data));
+    // fetch('https://geo.ipify.org/api/v2/country?apiKey=at_zEeg3r3heV9zVzwTF96QYOp15HLwT&ipAddress=8.8.8.8')
+    //     .then(response => response.json())
+    //     .then(data => console.log("Fetched data : ",  data));
     
 	return (
         <div>

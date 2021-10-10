@@ -1,15 +1,21 @@
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import IpInputSearch from '../../components/IpInputSearch/ipInputSearch';
 import './appContainer.css';
+import { fetchIpLocations } from '../../services/ip-location-service';
 
+const style = {
+    height : "275px"
+};
 
 const AppContainer = (props) => {
 
     const [inputIp , setInputIp] = useState('');
-
-    const style = {
-        height : "275px"
-    };
+    
+    useEffect(()=>{
+        fetchIpLocations(inputIp).then(res=>{
+            console.log("THIS IS THE AXIOS RESPONSE : ", res.data);
+        })
+    }, [inputIp])
 
 	return (
 
