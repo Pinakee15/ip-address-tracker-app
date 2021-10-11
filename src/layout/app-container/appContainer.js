@@ -6,15 +6,15 @@ import MapComponent from '../../components/mapComponent/mapComponent';
 import { checkForAuthentication } from '../../auth/auth';
 import { validURL } from '../../utils/utils';
 import { useHistory } from 'react-router';
-
+import SnackBar from '../../shared/entryComponents/Snackbars/snackBar';
 import './appContainer.css';
 
-
-const AppContainer = (props) => {
+const AppContainer = () => {
 
     const [inputIp , setInputIp] = useState('');
     const [ipInfos , setIpInfos] = useState({});
     const [coordinates , setCordinates] = useState([37.38605, -122.08385]);
+    const [customSnackBarMessage , setCustomSnackBarMessage] = useState('');
     const history = useHistory();
     
     useEffect(()=>{
@@ -30,9 +30,15 @@ const AppContainer = (props) => {
                     setIpInfos({...data});
                     setCordinates([data?.location?.lat, data?.location?.lng])
                 }
-            }).catch(err=>{
-                console.log("This is the error : ", err);
+            }).catch(error=>{
+                if(error.response !== undefined && error.response.data.code === 400){
+                    setCustomSnackBarMessage("OOPS ! It seems like this website doesn't exist.")
+                }                
             })
+        }
+
+        else if(!validURL(inputIp) && inputIp !== ''){
+            setCustomSnackBarMessage("The website address should of format 'example.com' or '.org'  etc")
         }
 
     }, [inputIp])
@@ -49,7 +55,9 @@ const AppContainer = (props) => {
 
             <div className="app-container__lower-body">
                 <MapComponent ipInfos={ipInfos} coordinates={[...coordinates]} />
-            </div>         
+            </div>  
+
+            <SnackBar message={customSnackBarMessage} setCustomSnackBarMessage={setCustomSnackBarMessage}></SnackBar>       
             
         </div>
 	);

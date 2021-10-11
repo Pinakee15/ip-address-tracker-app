@@ -4,7 +4,6 @@ import './displayDetailsModal.css';
 
 
 let formatIpInfos = (ipInfos)=>{
-    console.log("IP INFOS : ", ipInfos);
     if(Object.keys(ipInfos).length==0){
         ipInfos = dummyIpData;
     }

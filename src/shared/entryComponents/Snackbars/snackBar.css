@@ -1,0 +1,29 @@
+.snackbar-container {
+  position: fixed;
+  bottom: 4rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  width: 100%;
+  background-color: transparent;
+}
+
+.snackbar {
+  background-color: #ff0000;
+  padding: 0.8rem 3rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  position: relative;
+  font-size: 1rem;
+  max-width: 40vw;
+}
+
+.snackbar-cross {
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+}

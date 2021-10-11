@@ -21,7 +21,7 @@ const MapComponent = ({coordinates , ipInfos}) => {
     const MovePointer = () => {
 		const map = useMap();
         if(Object.keys(ipInfos).length>0){  
-            map.flyTo(new Leaflet.LatLng(ipInfos?.location?.lat, [ipInfos?.location?.lng]), 10);
+            map.flyTo(new Leaflet.LatLng(ipInfos?.location?.lat, [ipInfos?.location?.lng]), 11);
         }		        
 		return null;
 	};
@@ -36,16 +36,14 @@ const MapComponent = ({coordinates , ipInfos}) => {
 
     // if(!cordinates || cordinates?.length >0) [51.505, -0.09]
     return (        
-        <MapContainer center={cordinates} zoom={10} scrollWheelZoom={false}>
+        <MapContainer center={cordinates} zoom={11} scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <MovePointer />
             <Marker position={cordinates} icon={customMarker}>
-                {/* <Popup>
 
-                </Popup> */}
             </Marker>
         </MapContainer>
     )
