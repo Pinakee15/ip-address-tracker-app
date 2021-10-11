@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { dummyIpData } from '../../../../assets/dummy-data/dummy-data';
+import IpInputSearch from '../../../../components/IpInputSearch/ipInputSearch';
 import './displayDetailsModal.css';
 
 
 let formatIpInfos = (ipInfos)=>{
+
+    if(Object.keys(ipInfos).length==0){
+        ipInfos = dummyIpData;
+    }
+
     return [
             {'IP ADDRESS' : ipInfos['ip']} , 
             {'LOCATION' : (ipInfos?.location?.city ? ipInfos?.location?.city + ', ' : '') + 
