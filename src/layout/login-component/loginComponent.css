@@ -1,0 +1,33 @@
+.container {
+  height: 100vh !important;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(70, 199, 252, 1) 100%
+  );
+  flex-direction: column;
+}
+
+.container__login-box {
+  height: 360px;
+  width: 350px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.container-header {
+  color: #fff;
+  position: absolute;
+  bottom: 3rem;
+  text-align: center;
+  left: 0;
+  width: 100%;
+}
