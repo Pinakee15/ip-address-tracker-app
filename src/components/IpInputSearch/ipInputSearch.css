@@ -17,6 +17,7 @@ form {
 
 ::-webkit-input-placeholder {
   font-size: 18px;
+  color: hsl(0, 0%, 59%);
 }
 
 .search-ip-input {
@@ -25,7 +26,12 @@ form {
 
 .submit-btn {
   cursor: pointer;
-  padding: 1rem;
+  padding: 1rem 1.4rem;
   border-radius: 0 0.75rem 0.75rem 0;
   background-color: #000;
+  border: 1px;
+}
+
+.arrow-img {
+  margin-top: 2px;
 }
