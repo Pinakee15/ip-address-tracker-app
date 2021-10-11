@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import Sawo from 'sawo'
 import './loginComponent.css'
 
+const {REACT_APP_SAWO_API_KEY} = process.env;
+
 const LoginComponent = () => {
+    console.log("THIS IS KEUY : ", typeof REACT_APP_SAWO_API_KEY , REACT_APP_SAWO_API_KEY);
     useEffect(() => {
         var config = {
             containerID: 'sawo-container',
             identifierType: 'phone_number_sms',
-            apiKey: '06e99332-df38-4456-abf7-59fe16f3229a',        
+            apiKey: REACT_APP_SAWO_API_KEY,        
             onSuccess: payload => {                
                 console.log("THIS IS THE SAWO PAYLOAD : ", payload);
             },
