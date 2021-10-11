@@ -1,5 +1,5 @@
 import React , {useState , useEffect} from 'react';
-import { useMap, MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useMap, MapContainer, TileLayer, Marker} from 'react-leaflet';
 import pointerImg from '../../assets/images/icon-location.svg';
 import Leaflet from 'leaflet';
 

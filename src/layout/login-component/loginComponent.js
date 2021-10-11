@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMap, MapContainer, TileLayer, Marker} from 'react-leaflet';
 import { useHistory } from 'react-router';
 import Sawo from 'sawo'
 import { checkForAuthentication, storeUserId } from '../../auth/auth';
@@ -42,7 +43,15 @@ const LoginComponent = () => {
                     borderRadius: '50px'}}>
                 </div>
             </div>
-            <h1 className="container-header">Please login to access the app !</h1>
+            <h1 className="container__header">Please login to access the app !</h1>
+
+            <MapContainer center={[37,-122]} zoom={11} scrollWheelZoom={false}>
+                <TileLayer
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+            </MapContainer>
+
         </div>
     )
 }
