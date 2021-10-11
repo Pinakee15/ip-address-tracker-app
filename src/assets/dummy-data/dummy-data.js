@@ -1,32 +1,32 @@
 // THIS IS THE DUMMY DATA FOR WHEN USER FIRST ENTERS THE APP
 
 export const dummyIpData = {
-    "ip": "31.13.70.36",
+    "ip": "142.251.2.139",
     "location": {
         "country": "US",
         "region": "California",
-        "city": "Los Angeles",
-        "lat": 34.05223,
-        "lng": -118.24368,
-        "postalCode": "90001",
+        "city": "Mountain View",
+        "lat": 37.38605,
+        "lng": -122.08385,
+        "postalCode": "94035",
         "timezone": "-07:00",
-        "geonameId": 5368361
+        "geonameId": 5375480
     },
     "domains": [
-        "edge-star-mini-shv-01-lax3.facebook.com",
-        "facebook.com",
-        "fb.com",
-        "fb.me",
-        "fbcdn.net"
+        "admob.biz",
+        "admob.co.in",
+        "admob.co.kr",
+        "admob.co.nz",
+        "admob.co.uk"
     ],
     "as": {
-        "asn": 32934,
-        "name": "Facebook Inc",
-        "route": "31.13.70.0/24",
-        "domain": "https://www.facebook.com/",
+        "asn": 15169,
+        "name": "Google LLC",
+        "route": "142.251.2.0/24",
+        "domain": "https://about.google/intl/en/",
         "type": "Content"
     },
-    "isp": "Facebook Ireland Ltd",
+    "isp": "Google LLC",
     "proxy": {
         "proxy": false,
         "vpn": false,

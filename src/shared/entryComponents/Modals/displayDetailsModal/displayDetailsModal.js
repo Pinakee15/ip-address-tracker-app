@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { dummyIpData } from '../../../../assets/dummy-data/dummy-data';
-import IpInputSearch from '../../../../components/IpInputSearch/ipInputSearch';
 import './displayDetailsModal.css';
 
 
 let formatIpInfos = (ipInfos)=>{
-
+    console.log("IP INFOS : ", ipInfos);
     if(Object.keys(ipInfos).length==0){
         ipInfos = dummyIpData;
     }

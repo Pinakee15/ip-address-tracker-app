@@ -10,15 +10,11 @@ import { useHistory } from 'react-router';
 import './appContainer.css';
 
 
-const style = {
-    height : "275px"
-};
-
 const AppContainer = (props) => {
 
     const [inputIp , setInputIp] = useState('');
     const [ipInfos , setIpInfos] = useState({});
-    const [coordinates , setCordinates] = useState([51.505, -0.09]);
+    const [coordinates , setCordinates] = useState([37.38605, -122.08385]);
     const history = useHistory();
     
     useEffect(()=>{
@@ -45,7 +41,7 @@ const AppContainer = (props) => {
 
         <div className="app-container">
 
-            <div className="app-container__upper-body" style={style}>
+            <div className="app-container__upper-body">
                 <h1 className="upper-body__heading">IP Address Tracker</h1>
                 <IpInputSearch setInputIp={setInputIp}/>
                 <DisplayDetailsModal ipInfos={ipInfos} />

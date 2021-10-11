@@ -13,7 +13,7 @@ const IpInputSearch = (props) => {
 	};
     
 	return (
-        <div>
+        <div className="search-container">
             <form onSubmit={submitIp}>
                 <input
                     className='search-ip-input'

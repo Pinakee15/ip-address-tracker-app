@@ -13,15 +13,18 @@
   background-repeat: no-repeat;
   width: 100%;
   position: relative;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .upper-body__heading {
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
   text-align: center;
   margin: 0px !important;
   color: #fff;
   font-weight: 500;
-  flex: 1;
 }
 
 .app-container__lower-body {
