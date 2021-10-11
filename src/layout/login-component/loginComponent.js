@@ -1,23 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import Sawo from 'sawo'
-import './loginComponent.css'
+import { checkForAuthentication, storeUserId } from '../../auth/auth';
+import './loginComponent.css';
+
 
 const {REACT_APP_SAWO_API_KEY} = process.env;
 
 const LoginComponent = () => {
-    console.log("THIS IS KEUY : ", typeof REACT_APP_SAWO_API_KEY , REACT_APP_SAWO_API_KEY);
+    
+    const [authenticationFlag , setAuthenticationFlag] = useState(false);
+    const history = useHistory();
+
     useEffect(() => {
+
+        // CHECK IF USER IS ALREADY LOGGED IN ?
+        if(checkForAuthentication()){
+            history.push("/app");
+        }
+
         var config = {
             containerID: 'sawo-container',
             identifierType: 'phone_number_sms',
             apiKey: REACT_APP_SAWO_API_KEY,        
             onSuccess: payload => {                
-                console.log("THIS IS THE SAWO PAYLOAD : ", payload);
+                if(payload?.user_id){
+                    storeUserId(payload?.user_id);
+                    setAuthenticationFlag(true);
+                }
             },
         }
         let sawo = new Sawo(config)
         sawo.showForm()
-    }, [])
+    }, [authenticationFlag])
 
     return (
         <div className="container">

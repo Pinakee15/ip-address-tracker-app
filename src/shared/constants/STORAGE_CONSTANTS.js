@@ -1,0 +1,5 @@
+// THIS FILES WILL CONTAIN ALL THE APP STORAGE CONSTANTS
+
+export const STORAGE_CONSTANTS = {
+    USER_ID : '__user_id__'
+}

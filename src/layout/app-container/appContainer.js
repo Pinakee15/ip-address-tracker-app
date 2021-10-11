@@ -1,9 +1,13 @@
 import React , {useState , useEffect} from 'react';
 import IpInputSearch from '../../components/IpInputSearch/ipInputSearch';
-import './appContainer.css';
 import { fetchIpLocations } from '../../services/ip-location-service';
 import DisplayDetailsModal from '../../shared/entryComponents/Modals/displayDetailsModal/displayDetailsModal';
 import MapComponent from '../../components/mapComponent/mapComponent';
+import { checkForAuthentication } from '../../auth/auth';
+import { useHistory } from 'react-router';
+
+import './appContainer.css';
+
 
 const style = {
     height : "275px"
@@ -14,9 +18,14 @@ const AppContainer = (props) => {
     const [inputIp , setInputIp] = useState('');
     const [ipInfos , setIpInfos] = useState({});
     const [coordinates , setCordinates] = useState([51.505, -0.09]);
-    // const [ipInfos , setIpInfos] = useState("string");
+    const history = useHistory();
     
     useEffect(()=>{
+
+        if(!checkForAuthentication()){
+            history.push("/");
+        }
+
         fetchIpLocations(inputIp).then(res=>{
             if(res){
                 let data = res?.data;
@@ -39,7 +48,7 @@ const AppContainer = (props) => {
             <div className="app-container__lower-body">
                 <MapComponent ipInfos={ipInfos} coordinates={[...coordinates]} />
             </div>         
-            {/* <div>Ip input : {inputIp}</div> */}
+            
         </div>
 	);
 };
