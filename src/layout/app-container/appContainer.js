@@ -4,6 +4,7 @@ import { fetchIpLocations } from '../../services/ip-location-service';
 import DisplayDetailsModal from '../../shared/entryComponents/Modals/displayDetailsModal/displayDetailsModal';
 import MapComponent from '../../components/mapComponent/mapComponent';
 import { checkForAuthentication } from '../../auth/auth';
+import { validURL } from '../../utils/utils';
 import { useHistory } from 'react-router';
 
 import './appContainer.css';
@@ -26,15 +27,18 @@ const AppContainer = (props) => {
             history.push("/");
         }
 
-        fetchIpLocations(inputIp).then(res=>{
-            if(res){
-                let data = res?.data;
-                setIpInfos({...data});
-                setCordinates([data?.location?.lat, data?.location?.lng])
-            }
-        }).catch(err=>{
-            console.log("This is the error : ", err);
-        })
+        if(validURL(inputIp)){
+            fetchIpLocations(inputIp).then(res=>{
+                if(res){
+                    let data = res?.data;
+                    setIpInfos({...data});
+                    setCordinates([data?.location?.lat, data?.location?.lng])
+                }
+            }).catch(err=>{
+                console.log("This is the error : ", err);
+            })
+        }
+
     }, [inputIp])
 
 	return (
