@@ -35,3 +35,11 @@ form {
 .arrow-img {
   margin-top: 2px;
 }
+
+/* // FOR MOBILE view */
+
+@media only screen and (max-width: 475px) {
+  .search-container {
+    width: 300px;
+  }
+}
