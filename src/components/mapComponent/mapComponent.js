@@ -29,8 +29,7 @@ const MapComponent = ({coordinates , ipInfos}) => {
 
     useEffect(() => {     
 
-        if(Object.keys(ipInfos).length>0){  
-            console.log("This i ipInfos : ", ipInfos);   
+        if(Object.keys(ipInfos).length>0){   
             setCordinates([ipInfos?.location?.lat, ipInfos?.location?.lng]);
         }
         

@@ -32,6 +32,8 @@ const AppContainer = (props) => {
                 setIpInfos({...data});
                 setCordinates([data?.location?.lat, data?.location?.lng])
             }
+        }).catch(err=>{
+            console.log("This is the error : ", err);
         })
     }, [inputIp])
 

@@ -16,9 +16,9 @@ const DisplayDetailsModal = (props) => {
 
 	return (
         <div className="modalContainer">
-            {formatIpInfos(props?.ipInfos).map(info=>{
+            {formatIpInfos(props?.ipInfos).map((info, i)=>{
                 return (
-                    <div>
+                    <div key={i}>
                         <p>{Object.keys(info)[0]}</p>
                         <p>{Object.values(info)[0]}</p>
                     </div>
