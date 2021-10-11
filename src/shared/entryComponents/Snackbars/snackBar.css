@@ -11,8 +11,9 @@
 }
 
 .snackbar {
-  background-color: #ff0000;
-  padding: 0.8rem 3rem;
+  /* background-color: #ff0000; */
+  background-color: #ff5733;
+  padding: 1rem 3rem;
   border-radius: 0.25rem;
   color: #fff;
   font-family: "Rubik", sans-serif;

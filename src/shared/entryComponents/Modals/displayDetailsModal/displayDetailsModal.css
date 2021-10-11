@@ -36,6 +36,11 @@
   padding-top: 1rem;
 }
 
+.show-blurr {
+  color: transparent !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+
 .info-box__left-border {
   position: absolute;
   width: 1px;
@@ -43,6 +48,10 @@
   height: 70px;
   left: 0;
   top: 30px;
+}
+
+.change-background {
+  background-color: #ffffe0 !important;
 }
 
 /* FOR MOBILE DEVICES */

@@ -15,6 +15,7 @@ const AppContainer = () => {
     const [ipInfos , setIpInfos] = useState({});
     const [coordinates , setCordinates] = useState([37.38605, -122.08385]);
     const [customSnackBarMessage , setCustomSnackBarMessage] = useState('');
+    const [isLoading , setIsLoading] = useState(false);
     const history = useHistory();
     
     useEffect(()=>{
@@ -24,21 +25,29 @@ const AppContainer = () => {
         }
 
         if(validURL(inputIp)){
+            console.log("initial value of isloading : ", isLoading)
+            setIsLoading(true);
             fetchIpLocations(inputIp).then(res=>{
+                setIsLoading(false);
+                console.log("final value of isloading : ", isLoading)
                 if(res){
                     let data = res?.data;
                     setIpInfos({...data});
                     setCordinates([data?.location?.lat, data?.location?.lng])
                 }
             }).catch(error=>{
+                setIsLoading(false);
                 if(error.response !== undefined && error.response.data.code === 400){
-                    setCustomSnackBarMessage("OOPS ! It seems like this website doesn't exist.")
-                }                
+                    setCustomSnackBarMessage("OOPS ! It seems like this website or IP address doesn't exist.")
+                }   
+                if(error.response !== undefined && error.response.data.code === 403){
+                    setCustomSnackBarMessage("OOPS ! It seems something went wrong.")
+                }               
             })
         }
 
         else if(!validURL(inputIp) && inputIp !== ''){
-            setCustomSnackBarMessage("The website address should of format 'example.com' or '.org'  etc")
+            setCustomSnackBarMessage("The website address should of format 'example.com' or '.org'  etc.")
         }
 
     }, [inputIp])
@@ -49,8 +58,11 @@ const AppContainer = () => {
 
             <div className="app-container__upper-body">
                 <h1 className="upper-body__heading">IP Address Tracker</h1>
-                <IpInputSearch setInputIp={setInputIp}/>
-                <DisplayDetailsModal ipInfos={ipInfos} />
+                <IpInputSearch setInputIp={setInputIp}/>                
+                {
+                    isLoading ? (<DisplayDetailsModal ipInfos={ipInfos} isLoading={isLoading}/>) : 
+                    (<DisplayDetailsModal ipInfos={ipInfos} isLoading={isLoading}/>)
+                }
             </div>
 
             <div className="app-container__lower-body">
