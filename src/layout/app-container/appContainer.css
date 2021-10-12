@@ -54,4 +54,8 @@
   .app-container__upper-body {
     height: 300px;
   }
+
+  .upper-body__logout {
+    display: none !important;
+  }
 }

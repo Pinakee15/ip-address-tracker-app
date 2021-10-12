@@ -26,3 +26,11 @@
   color: rgb(255, 222, 64);
   font-family: "Rubik", sans-serif;
 }
+
+/* FOR MOBILE VIEW */
+
+@media only screen and (max-width: 475px) {
+  .container__login-box {
+    max-width: 93vw;
+  }
+}
