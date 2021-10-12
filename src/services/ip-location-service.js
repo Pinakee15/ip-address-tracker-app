@@ -1,8 +1,8 @@
 import axios from "axios";
 import { API_PATH_CONSTANTS } from "../shared/constants/API_CONTANTS";
+require('dotenv').config();
 
-
-let {REACT_APP_IP_LOCATION_API_KEY} = process.env
+const {REACT_APP_IP_LOCATION_API_KEY} = process.env;
 
 export let fetchIpLocations = async (ipAddress)=>{
     

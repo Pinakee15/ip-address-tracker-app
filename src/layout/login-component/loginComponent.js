@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import Sawo from 'sawo'
 import { checkForAuthentication, storeUserId } from '../../auth/auth';
 import './loginComponent.css';
-
+require('dotenv').config();
 
 const {REACT_APP_SAWO_API_KEY} = process.env;
 
