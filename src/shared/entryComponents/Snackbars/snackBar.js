@@ -4,8 +4,7 @@ import "./snackBar.css";
 const SnackBar = ({message , setCustomSnackBarMessage}) => {
     //// Store the coordinates . 
 
-    useEffect(() => {     
-        console.log("entered ...||| ")
+    useEffect(() => {             
         setTimeout(()=>{
             setCustomSnackBarMessage('');
         }, 2700)

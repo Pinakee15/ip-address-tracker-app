@@ -7,8 +7,7 @@ const IpInputSearch = (props) => {
 
     const [ip, setIp] = useState('');
 	const submitIp = (e) => {
-		e.preventDefault();
-        console.log("Submitted value : ", e , " and onchange value : ", ip)
+		e.preventDefault();        
         props.setInputIp(ip)
 	};
     

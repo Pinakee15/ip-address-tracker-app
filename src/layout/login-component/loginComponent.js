@@ -12,9 +12,7 @@ const LoginComponent = () => {
     
     const [authenticationFlag , setAuthenticationFlag] = useState(false);
     const history = useHistory();
-
-    console.log("environment variable : ", REACT_APP_SAWO_API_KEY , process.env);
-
+    
     useEffect(() => {
 
         // CHECK IF USER IS ALREADY LOGGED IN ?

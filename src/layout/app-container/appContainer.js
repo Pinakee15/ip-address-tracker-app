@@ -29,12 +29,10 @@ const AppContainer = () => {
             history.push("/");
         }
 
-        if(validURL(inputIp)){
-            console.log("initial value of isloading : ", isLoading)
+        if(validURL(inputIp)){            
             setIsLoading(true);
             fetchIpLocations(inputIp).then(res=>{
-                setIsLoading(false);
-                console.log("final value of isloading : ", isLoading)
+                setIsLoading(false);                
                 if(res){
                     let data = res?.data;
                     setIpInfos({...data});
