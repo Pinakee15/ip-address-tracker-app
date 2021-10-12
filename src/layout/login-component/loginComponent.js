@@ -14,6 +14,8 @@ const LoginComponent = () => {
     const history = useHistory();
     
     useEffect(() => {
+
+        console.log("ENVIRONMENT VARIBALES : ", process.env);
         
         // CHECK IF USER IS ALREADY LOGGED IN ?
         if(checkForAuthentication()){
