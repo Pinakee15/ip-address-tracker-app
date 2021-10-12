@@ -13,6 +13,8 @@ const LoginComponent = () => {
     const [authenticationFlag , setAuthenticationFlag] = useState(false);
     const history = useHistory();
 
+    console.log("environment variable : ", REACT_APP_SAWO_API_KEY , process.env);
+
     useEffect(() => {
 
         // CHECK IF USER IS ALREADY LOGGED IN ?
@@ -41,8 +43,7 @@ const LoginComponent = () => {
                 <div id="sawo-container" style={{ height: '340px',  width: '320px', borderRadius: '50px'}}>
                     <h2 className="login-header">Log In</h2>
                 </div>
-            </div>
-            {/* <h1 className="container__header">Please login to access the app !</h1> */}
+            </div>            
 
             <MapContainer center={[37,-122]} zoom={11} scrollWheelZoom={false}>
                 <TileLayer
