@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useMap, MapContainer, TileLayer, Marker} from 'react-leaflet';
+import { MapContainer, TileLayer} from 'react-leaflet';
 import { useHistory } from 'react-router';
 import Sawo from 'sawo'
 import { checkForAuthentication, storeUserId } from '../../auth/auth';
@@ -14,7 +14,7 @@ const LoginComponent = () => {
     const history = useHistory();
     
     useEffect(() => {
-
+        
         // CHECK IF USER IS ALREADY LOGGED IN ?
         if(checkForAuthentication()){
             history.push("/app");

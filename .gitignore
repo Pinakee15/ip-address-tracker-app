@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-text.txt
-.envi
 .env
 
 # testing
