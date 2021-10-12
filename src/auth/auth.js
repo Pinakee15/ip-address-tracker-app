@@ -8,3 +8,7 @@ export const checkForAuthentication = ()=>{
 export const storeUserId = (userId)=>{
     localStorage.setItem(STORAGE_CONSTANTS.USER_ID , `${userId}`);
 }
+
+export const clearLocalStorage = ()=>{
+    localStorage.clear();
+}

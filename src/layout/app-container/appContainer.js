@@ -3,7 +3,7 @@ import IpInputSearch from '../../components/IpInputSearch/ipInputSearch';
 import { fetchIpLocations } from '../../services/ip-location-service';
 import DisplayDetailsModal from '../../shared/entryComponents/Modals/displayDetailsModal/displayDetailsModal';
 import MapComponent from '../../components/mapComponent/mapComponent';
-import { checkForAuthentication } from '../../auth/auth';
+import { checkForAuthentication, clearLocalStorage } from '../../auth/auth';
 import { validURL } from '../../utils/utils';
 import { useHistory } from 'react-router';
 import SnackBar from '../../shared/entryComponents/Snackbars/snackBar';
@@ -17,6 +17,11 @@ const AppContainer = () => {
     const [customSnackBarMessage , setCustomSnackBarMessage] = useState('');
     const [isLoading , setIsLoading] = useState(false);
     const history = useHistory();
+
+    const logOut = ()=>{
+        clearLocalStorage();
+        history.push("/")
+    }
     
     useEffect(()=>{
 
@@ -57,7 +62,10 @@ const AppContainer = () => {
         <div className="app-container">
 
             <div className="app-container__upper-body">
-                <h1 className="upper-body__heading">IP Address Tracker</h1>
+                <h1 className="upper-body__heading">
+                    <span className="upper-body__logout" onClick={logOut}>Log Out</span> 
+                    IP Address Tracker
+                </h1>
                 <IpInputSearch setInputIp={setInputIp}/>                
                 {
                     isLoading ? (<DisplayDetailsModal ipInfos={ipInfos} isLoading={isLoading}/>) : 
