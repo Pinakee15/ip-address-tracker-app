@@ -17,7 +17,7 @@ const LoginComponent = () => {
 
         console.log("ENVIRONMENT VARIBALES : ", process.env);
         
-        // CHECK IF USER IS ALREADY LOGGED IN ?
+        // CHECK IF USER IS ALREADY LOGGED IN.. ?
         if(checkForAuthentication()){
             history.push("/app");
         }
