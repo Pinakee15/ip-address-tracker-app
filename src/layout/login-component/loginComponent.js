@@ -38,12 +38,11 @@ const LoginComponent = () => {
     return (
         <div className="container">
             <div className="container__login-box">
-                <div id="sawo-container" 
-                    style={{ height: '340px',  width: '320px',
-                    borderRadius: '50px'}}>
+                <div id="sawo-container" style={{ height: '340px',  width: '320px', borderRadius: '50px'}}>
+                    <h2 className="login-header">Log In</h2>
                 </div>
             </div>
-            <h1 className="container__header">Please login to access the app !</h1>
+            {/* <h1 className="container__header">Please login to access the app !</h1> */}
 
             <MapContainer center={[37,-122]} zoom={11} scrollWheelZoom={false}>
                 <TileLayer

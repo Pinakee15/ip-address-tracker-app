@@ -27,18 +27,8 @@
   box-shadow: 9px 17px 25px black;
 }
 
-.container__header {
-  position: absolute;
-  bottom: 1rem;
-  text-align: center;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-  background: black;
-  box-shadow: 9px 17px 25px #1b1212;
-  width: 48%;
-  color: yellow;
-  padding: 1.8rem;
-  border-radius: 0 0 10px 10px;
-  left: 24%;
+.login-header {
+  margin: 0 !important;
+  color: rgb(255, 222, 64);
+  font-family: "Rubik", sans-serif;
 }
