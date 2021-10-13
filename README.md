@@ -30,6 +30,7 @@ Users should be able to:
   ##### - components
   ##### - layout
   ##### - services
+  ##### - shared
   ##### - utils
 
 ## Screenshot
