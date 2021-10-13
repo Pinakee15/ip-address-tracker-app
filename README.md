@@ -54,7 +54,7 @@ Users should be able to:
 - Mobile landing view.
   ![Postman API call](./Screenshots/mobile-app.png)
 - Mobile view after feeding value 
-  ![Postman API call](./screenshots/mobile-value.png)
+  ![Postman API call](./Screenshots/mobile-value.png)
 
 
 ### Links
