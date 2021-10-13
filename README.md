@@ -68,10 +68,11 @@ Users should be able to:
 ### Built with
 - HTML CSS
 - [React](https://reactjs.org/) - JS library
-- [Sawo](https://sawolabs.com/) - Passwordless Authentication SDK
+- [React router](https://reactrouter.com/) React supporting routing library
+- [Sawo SDK](https://sawolabs.com/) - Passwordless Authentication SDK
 - [IP Geolocation API](https://geo.ipify.org/) - Geolocation of an IP address finder api
 - [Leaftlet](https://leafletjs.com/) - Mapping Library
 - [React Leaflet](https://react-leaflet.js.org/) - React components for Leaflet
 - [Axios](https://axios-http.com/) - Promise based HTTP client library
-- Flexbox
-- Media Query - For responsive mobile view
+- Flexbox - For structuring html elements along x or y axis
+- Media Query - For responsive mobile app view
