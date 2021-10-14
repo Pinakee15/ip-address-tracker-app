@@ -34,6 +34,8 @@ const AppContainer = () => {
             console.log(histories)
             setUserSearchHistory(histories?.data?.data);
             setShowHistoryModal(true);
+        }).catch(err=>{
+            setCustomSnackBarMessage("OOPS ! Something went wrong while fetching the data.")
         })
         return;
     }
@@ -59,7 +61,6 @@ const AppContainer = () => {
                     // GET THE USER ID
                     const userId = getUserId();
                     appService.postIpDetails(res?.data , userId);
-                    appService.fetchUserIpDetails(userId);
                 }
 
             }).catch(error=>{
