@@ -31,6 +31,7 @@ const AppContainer = () => {
     const fetchHistory=()=>{
         const userId = getUserId();
         appService.fetchUserIpDetails(userId).then(histories=>{
+            console.log(histories)
             setUserSearchHistory(histories?.data?.data);
             setShowHistoryModal(true);
         })
@@ -57,7 +58,7 @@ const AppContainer = () => {
                     // POSTING THE IP DETAILS IN THE BACKEND
                     // GET THE USER ID
                     const userId = getUserId();
-                    // appService.postIpDetails(res?.data , userId);
+                    appService.postIpDetails(res?.data , userId);
                     appService.fetchUserIpDetails(userId);
                 }
 

@@ -12,12 +12,14 @@
 }
 
 .history-modal {
-  width: 60vw;
+  width: 40vw;
   padding: 1rem;
   background-color: #fff;
   border-radius: 1rem;
   min-height: 4rem;
   margin-top: -3rem;
+  max-width: 75vh;
+  overflow: scroll;
 }
 
 .history-modal__heading {
@@ -41,4 +43,13 @@
   background-color: antiquewhite;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 475px) {
+  .history-modal {
+    width: 85vw;
+  }
+  .cross-history-modal {
+    font-size: 3rem;
+  }
 }

@@ -62,7 +62,24 @@
     height: 300px;
   }
 
+  .upper-body__heading {
+    max-width: 185px;
+    font-size: 1.5rem;
+  }
+
   .upper-body__logout {
-    display: none !important;
+    position: fixed;
+    right: 1rem;
+    top: 2.7rem;
+    font-size: 1rem;
+  }
+
+  .upper-body__search {
+    position: fixed;
+    left: 1.2rem;
+    top: 2.2rem;
+    max-width: 100px;
+    text-align: start;
+    font-size: 1.05rem;
   }
 }
