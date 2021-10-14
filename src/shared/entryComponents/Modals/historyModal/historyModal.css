@@ -1,7 +1,7 @@
 .history-modal-container {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   position: fixed;
   left: 0;
@@ -11,10 +11,34 @@
   z-index: 20;
 }
 
-.modal {
+.history-modal {
   width: 60vw;
   padding: 1rem;
   background-color: #fff;
   border-radius: 1rem;
   min-height: 4rem;
+  margin-top: -3rem;
+}
+
+.history-modal__heading {
+  font-size: 1.8rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 0 !important;
+}
+
+.cross-history-modal {
+  color: white !important;
+  font-size: 5rem;
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.history-modal__body-block {
+  margin: 0.75rem;
+  background-color: antiquewhite;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }

@@ -31,11 +31,7 @@ const postIpDetails = async (ipDetails , userId)=>{
 }
 
 const fetchUserIpDetails = (userId)=>{
-    axios.get(API_PATH_CONSTANTS.POST_USER_IP_DETAILS + `/${userId}`).then(res=>{
-        console.log("GET RESPONSE FROM SERVER : ", res);
-    }).catch(err=>{
-        console.log("error while fetching data : ", err);
-    })
+    return axios.get(API_PATH_CONSTANTS.POST_USER_IP_DETAILS + `/${userId}`);
 }
 
 export const appService = {

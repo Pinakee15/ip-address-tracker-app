@@ -20,6 +20,8 @@ const AppContainer = () => {
     const [coordinates , setCordinates] = useState([37.38605, -122.08385]);
     const [customSnackBarMessage , setCustomSnackBarMessage] = useState('');
     const [isLoading , setIsLoading] = useState(false);
+    const [userSearchHistory , setUserSearchHistory] = useState([]);
+    const [showHistoryModal , setShowHistoryModal] = useState(false);
     const history = useHistory();
 
     const logOut = ()=>{
@@ -29,7 +31,11 @@ const AppContainer = () => {
 
     const fetchHistory=()=>{
         const userId = getUserId();
-        appService.fetchUserIpDetails(userId);
+        appService.fetchUserIpDetails(userId).then(histories=>{
+            console.log("histories : ", histories?.data?.data)
+            setUserSearchHistory(histories?.data?.data);
+            setShowHistoryModal(true);
+        })
         return;
     }
     
@@ -100,8 +106,12 @@ const AppContainer = () => {
                 <MapComponent ipInfos={ipInfos} coordinates={[...coordinates]} />
             </div>  
 
-            <SnackBar message={customSnackBarMessage} setCustomSnackBarMessage={setCustomSnackBarMessage}></SnackBar>       
-            <HistoryModal />
+            <SnackBar message={customSnackBarMessage} setCustomSnackBarMessage={setCustomSnackBarMessage}></SnackBar>   
+
+            {showHistoryModal ? <HistoryModal 
+                userSearchHistory={userSearchHistory}
+                setShowHistoryModal={setShowHistoryModal} /> 
+            : null} 
         </div>
 	);
 };
