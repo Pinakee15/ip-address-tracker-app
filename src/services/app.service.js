@@ -5,7 +5,6 @@ import { API_PATH_CONSTANTS } from "../shared/constants/API_CONTANTS";
 require('dotenv').config();
 
 const postIpDetails = async (ipDetails , userId)=>{
-    console.log("postIpDetails called ..")
     let data = {
         _id : userId,
         ip : ipDetails?.ip,

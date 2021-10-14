@@ -4,7 +4,6 @@ import "./historyModal.css";
 const HistoryModal = ({userSearchHistory , setShowHistoryModal}) => {
     //// Store the coordinates . 
 
-    console.log("HISTORY we get : ", userSearchHistory);
     const hideModal = ()=>{
         setShowHistoryModal(false);
     }

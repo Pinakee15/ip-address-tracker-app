@@ -32,7 +32,6 @@ const AppContainer = () => {
     const fetchHistory=()=>{
         const userId = getUserId();
         appService.fetchUserIpDetails(userId).then(histories=>{
-            console.log("histories : ", histories?.data?.data)
             setUserSearchHistory(histories?.data?.data);
             setShowHistoryModal(true);
         })
