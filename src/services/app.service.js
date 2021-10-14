@@ -30,4 +30,15 @@ const postIpDetails = async (ipDetails , userId)=>{
 
 }
 
-export default postIpDetails;
+const fetchUserIpDetails = (userId)=>{
+    axios.get(API_PATH_CONSTANTS.POST_USER_IP_DETAILS + `/${userId}`).then(res=>{
+        console.log("GET RESPONSE FROM SERVER : ", res);
+    }).catch(err=>{
+        console.log("error while fetching data : ", err);
+    })
+}
+
+export const appService = {
+    postIpDetails,
+    fetchUserIpDetails
+} 

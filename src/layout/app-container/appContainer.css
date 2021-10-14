@@ -48,6 +48,13 @@
   cursor: pointer;
 }
 
+.upper-body__search {
+  position: absolute;
+  left: 2.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 /*  FOR MOBILE DEVICES */
 
 @media only screen and (max-width: 475px) {

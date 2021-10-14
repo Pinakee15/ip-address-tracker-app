@@ -8,8 +8,9 @@ import { validURL } from '../../utils/utils';
 import { useHistory } from 'react-router';
 import SnackBar from '../../shared/entryComponents/Snackbars/snackBar';
 import './appContainer.css';
-import postIpDetails from '../../services/app.service';
+import {appService} from '../../services/app.service';
 import { dummyIpData } from '../../assets/dummy-data/dummy-data';
+import HistoryModal from '../../shared/entryComponents/Modals/historyModal/historyModal';
 
 
 const AppContainer = () => {
@@ -24,6 +25,12 @@ const AppContainer = () => {
     const logOut = ()=>{
         clearLocalStorage();
         history.push("/")
+    }
+
+    const fetchHistory=()=>{
+        const userId = getUserId();
+        appService.fetchUserIpDetails(userId);
+        return;
     }
     
     useEffect(()=>{
@@ -51,7 +58,8 @@ const AppContainer = () => {
                     // POSTING THE IP DETAILS IN THE BACKEND
                     // GET THE USER ID
                     const userId = getUserId();
-                    postIpDetails(res?.data , userId);
+                    // appService.postIpDetails(res?.data , userId);
+                    appService.fetchUserIpDetails(userId);
                 }
 
             }).catch(error=>{
@@ -78,7 +86,8 @@ const AppContainer = () => {
             <div className="app-container__upper-body">
                 <h1 className="upper-body__heading">
                     <span className="upper-body__logout" onClick={logOut}>Log Out</span> 
-                    IP Address Tracker
+                    IP Address Tracker 
+                    <span className="upper-body__search" onClick={fetchHistory}>Search history</span>
                 </h1>
                 <IpInputSearch setInputIp={setInputIp}/>                
                 {
@@ -92,7 +101,7 @@ const AppContainer = () => {
             </div>  
 
             <SnackBar message={customSnackBarMessage} setCustomSnackBarMessage={setCustomSnackBarMessage}></SnackBar>       
-            
+            <HistoryModal />
         </div>
 	);
 };
