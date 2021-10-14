@@ -1,13 +1,16 @@
 import React , {useState , useEffect} from 'react';
 import IpInputSearch from '../../components/IpInputSearch/ipInputSearch';
-import { fetchIpLocations } from '../../services/ip-location-service';
+import { fetchIpLocations } from '../../services/ip-location.service';
 import DisplayDetailsModal from '../../shared/entryComponents/Modals/displayDetailsModal/displayDetailsModal';
 import MapComponent from '../../components/mapComponent/mapComponent';
-import { checkForAuthentication, clearLocalStorage } from '../../auth/auth';
+import { checkForAuthentication, clearLocalStorage, getUserId } from '../../auth/auth';
 import { validURL } from '../../utils/utils';
 import { useHistory } from 'react-router';
 import SnackBar from '../../shared/entryComponents/Snackbars/snackBar';
 import './appContainer.css';
+import postIpDetails from '../../services/app.service';
+import { dummyIpData } from '../../assets/dummy-data/dummy-data';
+
 
 const AppContainer = () => {
 
@@ -31,13 +34,26 @@ const AppContainer = () => {
 
         if(validURL(inputIp)){            
             setIsLoading(true);
+
+            // // temp start
+            // postIpDetails(dummyIpData);
+            // setIsLoading(false);
+            // // temp end
+
+            // FETCHING THE IP DETAILS FORM IPIFY
             fetchIpLocations(inputIp).then(res=>{
                 setIsLoading(false);                
                 if(res){
                     let data = res?.data;
                     setIpInfos({...data});
-                    setCordinates([data?.location?.lat, data?.location?.lng])
+                    setCordinates([data?.location?.lat, data?.location?.lng]);
+
+                    // POSTING THE IP DETAILS IN THE BACKEND
+                    // GET THE USER ID
+                    const userId = getUserId();
+                    postIpDetails(res?.data , userId);
                 }
+
             }).catch(error=>{
                 setIsLoading(false);
                 if(error.response !== undefined && error.response.data.code === 400){

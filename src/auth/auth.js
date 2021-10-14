@@ -9,6 +9,10 @@ export const storeUserId = (userId)=>{
     localStorage.setItem(STORAGE_CONSTANTS.USER_ID , `${userId}`);
 }
 
+export const getUserId = ()=>{
+    return localStorage.getItem(STORAGE_CONSTANTS.USER_ID);
+}
+
 export const clearLocalStorage = ()=>{
     localStorage.clear();
 }

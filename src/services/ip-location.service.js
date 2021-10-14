@@ -1,3 +1,5 @@
+// THIS SERVICE FILE WILL CONTAIN ALL THE HTTP REQUEST RELATED TO IPIFY APIS 
+
 import axios from "axios";
 import { API_PATH_CONSTANTS } from "../shared/constants/API_CONTANTS";
 require('dotenv').config();
