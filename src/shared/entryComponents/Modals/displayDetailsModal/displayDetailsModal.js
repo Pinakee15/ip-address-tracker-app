@@ -4,7 +4,7 @@ import './displayDetailsModal.css';
 
 
 let formatIpInfos = (ipInfos)=>{
-    if(Object.keys(ipInfos).length==0){
+    if(Object.keys(ipInfos).length===0){
         ipInfos = dummyIpData;
     }
 
@@ -24,10 +24,10 @@ const DisplayDetailsModal = (props) => {
             <div className={"modal-container " + (props?.isLoading ? 'change-background' : '')}>
                 {formatIpInfos(props?.ipInfos).map((info, i)=>{
                     return (
-                        <div className="info-box" key={i} style={{paddingLeft : i==0 ? '0px' : '1.5rem'}}>
+                        <div className="info-box" key={i} style={{paddingLeft : i===0 ? '0px' : '1.5rem'}}>
                             <p className="info-box__key">{Object.keys(info)[0]}</p>
                             <p className={"info-box__value "  + (props?.isLoading ? 'show-blurr' : '') }>{Object.values(info)[0]}</p>
-                            <div className="info-box__left-border" style={{display : i==0 ? 'none' : 'block'}}></div>
+                            <div className="info-box__left-border" style={{display : i===0 ? 'none' : 'block'}}></div>
                         </div>
                     )
                 })}                

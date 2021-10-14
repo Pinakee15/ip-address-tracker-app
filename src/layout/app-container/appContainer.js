@@ -9,7 +9,6 @@ import { useHistory } from 'react-router';
 import SnackBar from '../../shared/entryComponents/Snackbars/snackBar';
 import './appContainer.css';
 import {appService} from '../../services/app.service';
-import { dummyIpData } from '../../assets/dummy-data/dummy-data';
 import HistoryModal from '../../shared/entryComponents/Modals/historyModal/historyModal';
 
 
@@ -46,11 +45,6 @@ const AppContainer = () => {
 
         if(validURL(inputIp)){            
             setIsLoading(true);
-
-            // // temp start
-            // postIpDetails(dummyIpData);
-            // setIsLoading(false);
-            // // temp end
 
             // FETCHING THE IP DETAILS FORM IPIFY
             fetchIpLocations(inputIp).then(res=>{
